@@ -1,0 +1,20 @@
+<h2>Employee Details : </h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Employee Id : </th>
+            <th>Name : </th>
+            <th>Department : </th>
+            <th>Address : </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngIf="employee">
+            <td>{{employee.id}} </td>
+            <td>{{employee.name}}</td>
+            <td>{{employee.department}}</td>
+            <td>{{employee.address}}</td>
+        </tr>
+    </tbody>
+</table>
+<button (click)="gotoList()" class="btn btn-primary">Back to List</button><br>

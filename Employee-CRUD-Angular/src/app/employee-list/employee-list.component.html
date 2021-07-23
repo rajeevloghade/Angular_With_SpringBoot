@@ -1,0 +1,33 @@
+<div class="container">
+    <h2>Employee Details:</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Employee Id</th>
+                <th>Name</th>
+                <th>Department</th>
+                <th>Address</th>
+                <th>Details</th>
+                <th>Update</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody *ngIf="!loading">
+            <tr *ngFor="let employee of employees">
+                <td>{{employee.id}} </td>
+                <td>{{employee.name}}</td>
+                <td>{{employee.department}}</td>
+                <td>{{employee.address}}</td>
+                <td><button (click)="employeeDetails(employee.id)" type="button" class="btn btn-info">Details</button></td>
+                <td><button (click)="updateEmployee(employee.id)" type="button" class="btn btn-primary">Update</button>
+                </td>
+                <td><button (click)="deleteEmployee(employee.id)" type="button" class="btn btn-danger">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div *ngIf="loading" class="text-center">
+        <div class="spinner-border text-warning" role="status">
+        </div>
+    </div>
+</div>
